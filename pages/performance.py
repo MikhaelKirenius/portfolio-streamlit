@@ -2,8 +2,6 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import joblib
 
-st.title("📈 Model Performance")
-
 def show():
     
     try:

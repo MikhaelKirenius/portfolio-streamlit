@@ -3,7 +3,7 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from pages import profile, streamlit_app,overview, perfomance
+from pages import profile,overview,performance,predict, result
 
 st.set_page_config(page_title="Portfolio App", page_icon="📈", layout="centered")
 
@@ -13,22 +13,22 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-
-# Navigation dari pages
 st.sidebar.title("🚀 Navigation")
 page = st.sidebar.selectbox(
     "Choose a page:",
-    ["👨‍💼 Profile", "📋 Butterfly Project Overview", "🎯 Model Performance", "🔮 Prediction"]
+    ["👨‍💼 Profile", "📋 Project Overview", "🎯 Model Performance", "🗃 Result", "🔮 Prediction"]
 )
 
 if page == "👨‍💼 Profile":
     profile.show()
-elif page == "📋 Butterfly Project Overview":
+elif page == "📋 Project Overview":
     overview.show()
 elif page == "🎯 Model Performance":
-    perfomance.show()
+    performance.show()
+elif page == "🗃 Result":
+    result.show()
 elif page == "🔮 Prediction":
-    streamlit_app.show()
+    predict.show()
 
 
 st.markdown("---")
